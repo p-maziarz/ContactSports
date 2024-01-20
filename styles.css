@@ -1,75 +1,74 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fde6cc; /* Warm background color */
-    color: #5e5e5e; /* Dark gray text color */
+// Function to toggle visibility of content based on page
+function showPage(pageId) {
+    const pages = ['profile', 'connections', 'about', 'contact', 'login', 'register'];
+
+    // Hide all pages
+    pages.forEach(page => {
+        const element = document.getElementById(page);
+        if (element) {
+            element.style.display = 'none';
+        }
+    });
+
+    // Show the selected page
+    const selectedPage = document.getElementById(pageId);
+    if (selectedPage) {
+        selectedPage.style.display = 'block';
+    }
 }
 
-header {
-    background-color: #e44d26; /* Warm orange header */
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-}
+// Initial setup - show the profile page
+document.addEventListener('DOMContentLoaded', function () {
+    showPage('profile');
+});
 
-#main-content {
-    display: flex; /* Use Flexbox */
-    justify-content: space-around;
-    align-items: center; /* Center items vertically */
-    padding: 2em;
-}
+// Button click events
+document.getElementById('profile-button').addEventListener('click', function () {
+    showPage('profile');
+});
 
-#profile, #connections {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 1em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+document.getElementById('connections-button').addEventListener('click', function () {
+    showPage('connections');
+});
 
-footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #e44d26; /* Matching footer color */
-    color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+document.getElementById('about-button').addEventListener('click', function () {
+    showPage('about');
+});
 
-#connections-list {
-    list-style: none;
-    padding: 0;
-}
+document.getElementById('contact-button').addEventListener('click', function () {
+    showPage('contact');
+});
 
-#connections-list li {
-    margin-bottom: 0.5em;
-}
+document.getElementById('login-button').addEventListener('click', function () {
+    showPage('login');
+});
 
-/* Additional Styles for Buttons */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #e44d26; /* Warm orange button color */
-    border-radius: 5px;
-}
+document.getElementById('register-button').addEventListener('click', function () {
+    showPage('register');
+});
 
-.button:hover {
-    background-color: #d63b1f; /* Darker color on hover */
-}
+// Form submission event for login form
+document.addEventListener('DOMContentLoaded', function () {
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
 
-.about-content, .contact-content {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 2em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 2em 0;
-}
+            // Basic alert for demonstration, replace with actual authentication logic
+            alert('Login button clicked! Authentication logic goes here.');
+        });
+    }
+});
 
-/* Additional Styles for Page Titles */
-.page-title {
-    color: #e44d26; /* Warm orange color */
-}
+// Form submission event for registration form
+document.addEventListener('DOMContentLoaded', function () {
+    const registerForm = document.getElementById('register-form');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Basic alert for demonstration, replace with actual registration logic
+            alert('Register button clicked! Registration logic goes here.');
+        });
+    }
+});
