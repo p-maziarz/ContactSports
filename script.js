@@ -64,18 +64,32 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
-        registerForm.addEventListener('submit', function (event) {
+        registerForm.addEventListener('submit', async function (event) {
             event.preventDefault(); // Prevent default form submission
 
-            // Basic alert for demonstration, replace with actual registration logic
-            alert('Register button clicked! Registration logic goes here.');
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                // Add user data to Firestore 'users' collection
+                const docRef = await addDoc(collection(db, "users"), {
+                    username: username,
+                    password: password,
+                    // Add other user data as needed
+                });
+
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
         });
     }
 });
 
+
 // Firebase App and Firestore
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAw1eBrMaWdS9gTWgcTogeqEOVo86Rq0Xo",
