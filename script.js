@@ -1,6 +1,6 @@
 // Function to toggle visibility of content based on page
 function showPage(pageId) {
-    const pages = ['profile', 'connections', 'about', 'contact'];
+    const pages = ['profile', 'connections', 'about', 'contact', 'login', 'register'];
 
     // Hide all pages
     pages.forEach(page => {
@@ -39,5 +39,10 @@ document.getElementById('contact-button').addEventListener('click', function () 
     showPage('contact');
 });
 
+document.getElementById('login-button').addEventListener('click', function () {
+    showPage('login');
+});
 
-
+document.getElementById('register-button').addEventListener('click', function () {
+    showPage('register');
+});
