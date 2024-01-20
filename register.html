@@ -24,6 +24,12 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
 
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
                 <button type="submit" class="button">Register</button>
             </form>
 
@@ -73,6 +79,8 @@
                     const username = document.getElementById('username').value;
                     const password = document.getElementById('password').value;
                     const email = document.getElementById('email').value;
+                    const firstName = document.getElementById('firstName').value;
+                    const lastName = document.getElementById('lastName').value;
 
                     try {
                         // Check if the username already exists in the Firestore collection
@@ -91,7 +99,9 @@
                             await addDoc(usersCollection, {
                                 username,
                                 password,
-                                email
+                                email,
+                                firstName,
+                                lastName
                                 // Add other user data as needed
                             });
 
