@@ -28,6 +28,31 @@
         <p>&copy; 2024 Contact Sports Inc.</p>
     </footer>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
+
+    <!-- Your web app's Firebase configuration -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyAw1eBrMaWdS9gTWgcTogeqEOVo86Rq0Xo",
+            authDomain: "consportsdata.firebaseapp.com",
+            projectId: "consportsdata",
+            storageBucket: "consportsdata.appspot.com",
+            messagingSenderId: "942262562721",
+            appId: "1:942262562721:web:1fd5edc57737711926e5e0",
+            measurementId: "G-E4QRPDHZG0"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+    <!-- Your custom script -->
     <script src="script.js"></script>
 </body>
 </html>
