@@ -16,18 +16,8 @@ header {
 #main-content {
     display: flex; /* Use Flexbox */
     justify-content: space-around;
+    align-items: center; /* Center items vertically */
     padding: 2em;
-}
-
-.about-content {
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Stack items vertically initially */
-    align-items: center; /* Center items horizontally */
-}
-
-.about-content img {
-    width: 100%; /* Make images fill their containers */
-    max-width: 300px; /* Limit maximum image width */
 }
 
 #profile, #connections {
