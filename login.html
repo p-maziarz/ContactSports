@@ -14,7 +14,15 @@
     <section id="main-content">
         <div class="login-content">
             <h2 class="page-title">Login</h2>
-            <!-- Login form goes here -->
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" class="button">Login</button>
+            </form>
 
             <!-- Back button to revert to the main page -->
             <a href="index.html" class="button">Back</a>
